@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+  background-color: #10131b;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Center the title */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.app-title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #00ff9f, #00d4ff, #ff4d67);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textGlow 4s ease-in-out infinite alternate;
+}
+
+
+.card {
+  background: #1c1f2a;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 16px 0;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.01);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.balance-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.balance-amount h1 {
+  font-size: 2.5rem;
+  color: #00ff9f;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.sub-label {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.green {
+  color: #00ff9f;
+}
+.red {
+  color: #ff4d67;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 10, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  background: #1c1f2a;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.form input,
+.form select {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #2b2e3f;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form input:focus,
+.form select:focus {
+  outline: 2px solid #00ff9f;
+}
+
+.form-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #00ff9f;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00e697;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.transaction-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transaction-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #333;
+}
+
+.transaction-table th {
+  background-color: #2a2d3a;
+  color: #ccc;
+}
+
+.transaction-row:hover {
+  background-color: #2a2d3a;
+}
+
+.green {
+  color: #00ff9f;
+}
+
+.red {
+  color: #ff4d67;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ff4d67;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+}
+
+.total-row {
+  margin-top: 10px;
+  text-align: right;
+  font-weight: bold;
+  color: #fff;
+}
+/* Already defined .modal, .modal-overlay, etc. */
+
+.modal select,
+.modal input[type="date"] {
+  background: #2b2e3f;
+  border: none;
+  padding: 10px;
+  margin-top: 5px;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.modal select:focus,
+.modal input[type="date"]:focus {
+  outline: 2px solid #00ff9f;
+}
+/* ThemeToggle UI */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00ff9f;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Dark mode classes */
+body.dark {
+  background: linear-gradient(120deg, #10131b, #1c1f2a, #00d4ff, #ff4d67, #10131b);
+  background-size: 400% 400%;
+  animation: gradientBG 16s ease-in-out infinite;
+  color: #f0f0f0;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body.dark .card {
+  background: #1c1f2a;
+  color: #fff;
+}
+
+body.dark .transaction-table th,
+body.dark .transaction-table td {
+  color: #ddd;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+  background: transparent; /* Let body gradient show through */
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Center the title */
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+/* Fix for Filter modal form layout */
+.modal label {
+  display: block;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #2b2e3f;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.modal input:focus,
+.modal select:focus {
+  outline: 2px solid #00ff9f;
+}
+
+.modal .form-buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
