@@ -17,8 +17,13 @@ const AddTransaction = ({ onClose, onAdd }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.amount || !formData.category || !formData.date) return;
-    const res = await addTransaction(formData);
-    onAdd(res);
+    try {
+      const res = await addTransaction(formData);
+      onAdd(res);
+    } catch (err) {
+      if (err.response?.status === 401) alert('Please login to add transactions');
+      else alert(err.response?.data?.message || 'Could not add transaction');
+    }
     onClose();
   };
 

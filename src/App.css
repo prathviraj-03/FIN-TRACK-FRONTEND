@@ -6,34 +6,90 @@ body {
 }
 
 /* Center the title */
-.header {
+.topbar {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  width: 100%;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  background: linear-gradient(90deg, rgba(8,12,20,0.4), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00ff9f, #00d4ff 50%, #ff4d67);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #07121a;
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 
 .app-title {
-  font-size: 2.7rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  text-align: center;
   background: linear-gradient(90deg, #00ff9f, #00d4ff, #ff4d67);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  animation: textGlow 4s ease-in-out infinite alternate;
+}
+
+.top-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.greeting {
+  color: #cdebf9;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: rgba(255,255,255,0.03);
+  color: #e6f7ff;
+}
+
+.icon-btn.primary {
+  background: linear-gradient(90deg,#00ff9f,#00d4ff);
+  color: #07121a;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
 }
 
 
 .card {
-  background: #1c1f2a;
-  border-radius: 16px;
-  padding: 24px;
-  margin: 16px 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 14px;
+  padding: 20px;
+  margin: 12px 0;
   color: #fff;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   transform: scale(1.01);
@@ -334,8 +390,29 @@ body.dark .transaction-table td {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
+}
+
+/* Dashboard grid */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats-overview {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.visualizations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 .header {

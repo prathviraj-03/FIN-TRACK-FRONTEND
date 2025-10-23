@@ -3,8 +3,13 @@ import { deleteTransaction } from '../api';
 
 const Transaction = ({ transaction, onDelete }) => {
   const handleDelete = async () => {
-    await deleteTransaction(transaction._id);
-    onDelete(transaction._id);
+    try {
+      await deleteTransaction(transaction._id);
+      onDelete(transaction._id);
+    } catch (err) {
+      if (err.response?.status === 401) alert('Please login to delete transactions');
+      else alert(err.response?.data?.message || 'Could not delete');
+    }
   };
 
   return (

@@ -5,7 +5,7 @@ const Balance = ({ income, expense }) => {
   const balance = income - expense;
 
   return (
-    <div className="card balance-card">
+    <div className="card balance-card" style={{width: '100%'}}>
       <h2 className="section-title">Comprehensive Financial Overview</h2>
       <div className="balance-content">
         <div className="balance-amount">
