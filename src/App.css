@@ -3,6 +3,7 @@ body {
   background-color: #10131b;
   color: #f0f0f0;
   font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 /* Center the title */
@@ -82,12 +83,13 @@ body {
 }
 
 
+/* Card styles */
 .card {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius: 14px;
   padding: 20px;
   margin: 12px 0;
-  color: #fff;
+  color: #f0f0f0;
   box-shadow: 0 10px 30px rgba(2,6,23,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -99,6 +101,7 @@ body {
   font-size: 1.3rem;
   margin-bottom: 12px;
   font-weight: bold;
+  color: #00d4ff;
 }
 
 .balance-content {
@@ -115,19 +118,21 @@ body {
 
 .label {
   font-size: 0.9rem;
-  color: #aaa;
+  color: #b0b0b0;
 }
 
 .sub-label {
   font-size: 0.75rem;
-  color: #777;
+  color: #a0a0a0;
 }
 
 .green {
   color: #00ff9f;
+  font-weight: 600;
 }
 .red {
   color: #ff4d67;
+  font-weight: 600;
 }
 .modal-overlay {
   position: fixed;
@@ -369,6 +374,51 @@ body.dark {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  .visualizations {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .stats-overview {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 8px;
+  }
+  .topbar, .header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 8px;
+  }
+  .card {
+    padding: 12px;
+    margin: 8px 0;
+  }
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .balance-amount h1 {
+    font-size: 1.7rem;
+  }
+  .transaction-table th, .transaction-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  .form input, .form select, .modal input, .modal select {
+    font-size: 0.95rem;
+    padding: 8px;
   }
 }
 
